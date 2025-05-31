@@ -248,4 +248,72 @@ b & b \\
 \vspace{1em}\\
 This can be derived from the fact that a composite of two reflections is a rotation, noting that the angle of the rotation is double the angle between the lines of reflection: \[r_{xtan\theta}\cdot r_x=R_{2\theta}\] \[r_{xtan\theta}\cdot r_x\cdot r_x^{-1}=R_{2\theta}\cdot r_x^{-1}\] \[r_{xtan\theta}=R_{2\theta}\cdot r_x^{-1}\] \[r_{xtan\theta}=R_{2\theta}\cdot r_x\]
 
+\pagebreak
+\section{Limits}
+\subsection{Convergence}\
+\textbf{Definition of Convergence:}\footnote{If a sequence does NOT converge, then it diverges.} A sequence \{$a_n$\} is said to converge to a limit $A$ if for any neighborhood of $A$, there can be found a natural number $M$ such that whenever $n\geq M$, \{$a$\} is in the neighborhood of $A$. \vspace{1em}\\
+In other words, for any given neighborhood, there is a finite number of terms outside the neighborhood.\vspace{1em}\\
+\textbf{Proof for a general $\epsilon$:}\footnote{This is less complicated than the Delta-Epsilon Proof} \[\text{Let } \epsilon > 0 \] \[\text{Given } \lim_{x\to\infty} f(x) = A\footnote{Assume A is a known finite number}\] \[A-\epsilon < f(x) < A+\epsilon\] Then solve for $x$ in terms of $\epsilon$ to prove that: For all natural $n\geq\text{n in terms of } \epsilon$, $f(x)$ is within $\epsilon$ of $A$. Therefore, $\lim_{x\to\infty} f(x) = A$
+
+\subsection{Tests for Convergence and Divergence of Sequences}\
+\textbf{Comparison Principle:} The Comparison Principle for sequences can be used to compare a sequence to the terms of a simpler sequence to prove divergence. \vspace{1em}\\
+We can use sequences such as \{n\} and \{-n\} as they are both simple and obviously divergent. \vspace{1em}\\
+
+\textbf{Big Theorem:} If a sequence can be proved to be everywhere increasing and bounded above, or everywhere decreasing and bounded below, then it converges. The lowest upper bound, or the highest lower bound, is its limit. \vspace{1em}\\
+
+\textbf{P-Series Test:} For sequences $n^p$ and $p^n$, the following cases diverge\footnote{Other values of p will lead to convergence and is flipped for reciprocals} \[\{n^p\} \text{ where } p>0\] \[\{p^n\} \text{ where } p>1 \text{ or } p\leq-1\footnote{When $p\leq-1$, $p^n$ becomes an alternating sequence that is not practical for the comparison principle}\] \vspace{1em}\\
+
+\textbf{Subsequence Principle:} If $b_n$ is everywhere increasing, $a_n$ increases without bound, and $a_n$ is a subsequence of $b_n$, then $b_n$ increases without bound (is divergent). \vspace{1em}\\
+
+\textbf{Domination Principle:} If two sequences $\{a_n\}$ and $\{c_n\}$ both converge to the same limit L and $\{a_n\}\leq\{b_n\}\leq\{c_n\}$ for all $n$ greater than or equal to some natural number M, then $\{b_n\}$ converges to the same limit L.
+
+\subsection{Series}
+\textbf{Series:} \[\sum_{n=1}^{\infty}a_n = a_1+a_2+a_3+a_4+...\] \vspace{1em}\\
+\textbf{Sequence of Partial Sums:} \[\{S_1, S_2, S_3, ...\} \text{ where } S_1 = a_1, S_2 = a_1+a_2, ...\] \vspace{1em}\\
+A few important sequences to take note of are $\{\frac{1}{n^2}\}$ and $\{\frac{1}{n}\}$. \footnote{Also known as the harmonic series} \[\sum_{n=1}^{\infty}\frac{1}{n^2} = 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+...+\frac{1}{n^2}=\frac{\pi^2}{6} \text{; Converges}\] \[\sum_{n=1}^{\infty}\frac{1}{n} = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+...+\frac{1}{n}=\infty \text{ or DNE; Diverges}\] \vspace{1em}\\
+
+\subsection{Tests for Convergence and Divergence of Series}
+\textbf{Geometric Series Test:} Given the geometric series $S = a+ar+ar^2+ar+3+...$, the geometric series converges to $\frac{a}{1-r}$ if $|r|<1$, otherwise it diverges. \[\text{If } |r|<1\rightarrow\sum_{n=1}^{\infty}a(r)^{n-1} = \frac{a}{1-r}\] \vspace{1em}\\
+\textbf{nth Term Test:} If the sequence $\{a_n\}$ does not converge to 0, then the series $\sum_{n=1}^{\infty}a_n$ diverges. Be careful in using this test as this test can NOT prove convergence of a series. \[\lim_{n\rightarrow\infty}a_n\neq0 \rightarrow \sum_{n=1}^{\infty}a_n=\infty \text{ or DNE}\] \vspace{1em}\\
+\textbf{p-series Test:} Since we know from sequences that $\{n^p\}$ diverges for all $p>0$ and that $\{\frac{1}{n^p}\}$ converges for all $p\geq0$, the series of $\frac{1}{n^p}$ will converge if and only if $p>1$. \footnote{Note that $\sum_{n=1}^{\infty}\frac{1}{p^n}$ is just a geometric series and thus can be found through the Geometric Series Test.}\[p\leq1\rightarrow\sum_{n=1}^{\infty}\frac{1}{n^p}=\infty\] \vspace{1em}\\
+\textbf{Comparison Test\footnote{Not to be confused with the sequence test, comparison principle.}:} If $\{a_n\}$ and $\{b_n\}$ are two sequences such that $0<a_n\leq b_n$ for all natural numbers $n$, then:
+\begin{enumerate}
+    \item If $\sum_{n=1}^{\infty} a_n$ diverges, then $\sum_{n=1}^{\infty} b_n$ also diverges.
+    \item If $\sum_{n=1}^{\infty} b_n$ converges, then $\sum_{n=1}^{\infty} a_n$ also converges.
+\end{enumerate}
+Take note that you cannot prove that $\sum_{n=1}^{\infty} a_n$ diverges or that $\sum_{n=1}^{\infty} b_n$ converges. \vspace{1em}\\
+\textbf{Ratio Test:} For a sequence $\{a_n\}$, consider $b$ in: \[\lim_{n\rightarrow\infty}|\frac{a_{n+1}}{a_n}=b\]
+\begin{enumerate}
+    \item If $0\leq b<1$, then the series converges.
+    \item If $b>1$, then the series diverges.
+    \item If $b=1$, then this test is inconclusive and another test must be used to prove its convergence or divergence.
+\end{enumerate} 
+\textbf{Alternating Series Test:} A series $\sum_{n=1}^{\infty} a_n$ will converge if and only if:
+\begin{enumerate}
+    \item The sequence is strictly alternating in signs,
+    \item Everywhere decreasing in absolute value (approaches 0)
+    \item And the sequence converges to 0.
+\end{enumerate}
+
+\section{Calculus}
+\subsection{Integral: Area Under Curve}
+\textbf{Sum of Important Sums:\footnote{These will be given on the test and do not need to be memorized.}} \[1+2+3+4+...+n = \frac{n(n+1)}{2}\] \[1^2+2^2+3^2+4^2+...+n^2=\frac{n(n+1)(2n+1)}{6}\] \[1^3+2^3+3^3+4^3+...+n^3=(\frac{n(n+1)}{2})^2\]
+\textbf{Definite Integral:} The definite integral is the area under the curve. One way to find the definite integral is by considering rectangles with a width of $\frac{1}{n}$. Consider for example $f(x)=2x$. To find the definite integral over the interval $[0,2]$ \[\frac{1}{n}\sum_{k=1}^{2n}[2(\frac{k}{n})]=A\] Here, $\frac{1}{n}$ is the width of the rectangles, $2n$ is the number of rectangles, and $\frac{k}{n}$ is plugged into $x$. After simplifying using sum equations, find the limit as $n$ approaches $\infty$ to find the indefinite integral \[\lim_{n\rightarrow\infty}[A]\] When finding the definite integral over an interval $[1,2]$, add the starting x value to $\frac{k}{n}$: \[\frac{1}{n}\sum_{k=1}^{n}[2(\frac{k}{n}+1)]\] and solve for the limit as $n$ approaches $\infty$. \vspace{1em}\\
+\textbf{Trapezoid Rule:} To approximate the definite integral, you can use the trapezoid rule, where given $y=f(x)$, \[A=\frac{h}{2}(f(a)+2f(a+h)+2f(a+2h)+...+2f(a+(n-1)h)+f(a+nh))\]
+
+\subsection{AROC vs IROC}
+\textbf{Average Rate of Change:} Calculated as if there is a straight line between points $(a,f(a))$ and $(b, f(b))$. Over the interval $[a,b]$, the average rate of change would be \[\frac{f(b)-f(a)}{b-a}\]
+\textbf{Instantaneous Rate of Change:} Also known as the derivative. This can be \textit{approximated} by using the AROC of two points that are very close together. \[f'(x)=\frac{dy}{dx}\]
+
+\subsection{Limits and Discontinuities}
+\textbf{Limits:} A limit exists at $x\rightarrow c$ if and only if \[\lim_{x\rightarrow c^+}f(x)=\lim_{x\rightarrow c^-}f(x)\] and the limit is a finite, non-infinite number. \vspace{1em}\\
+\textbf{Continuity:} A function is continuous at point $x=c$ if and only if \[\lim_{x\rightarrow c^+}f(x)=\lim_{x\rightarrow c^-}f(x)=f(c)\]  \vspace{1em}\\
+\textbf{Discontinuities:}
+\begin{enumerate}
+    \item Removable discontinuity (hole): The limit exists but is not continuous.
+    \item Jump discontinuity: $\lim_{x\rightarrow c^+}f(x)$ and $\lim_{x\rightarrow c^-}f(x)$ exist but $\lim_{x\rightarrow c}f(x)$ does not exist.
+    \item Infinite discontinuity (vertical asymptote): both one-sided limits approach infinity, and thus do not exist (DNE). Limit algebraically is $\frac{k}{0}$.
+\end{enumerate}
+\textbf{Definition of a Limit:} A function $f(x)$ is said to approach a limit $L$ as $x\rightarrow c$ if and only if for any positive $\epsilon$ there exists a positive number $\delta$ such that whenever $x$ is within $\delta$ of $c$, but $x\neq c$, $f(x)$ is within $\epsilon$ of $L$. \[\lim_{x\rightarrow c}f(x)=L\]
+To find if a limit exists at c, 
 \end{document}
