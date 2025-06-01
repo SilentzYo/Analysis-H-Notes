@@ -273,9 +273,9 @@ We can use sequences such as \{n\} and \{-n\} as they are both simple and obviou
 A few important sequences to take note of are $\{\frac{1}{n^2}\}$ and $\{\frac{1}{n}\}$. \footnote{Also known as the harmonic series} \[\sum_{n=1}^{\infty}\frac{1}{n^2} = 1+\frac{1}{4}+\frac{1}{9}+\frac{1}{16}+...+\frac{1}{n^2}=\frac{\pi^2}{6} \text{; Converges}\] \[\sum_{n=1}^{\infty}\frac{1}{n} = 1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+...+\frac{1}{n}=\infty \text{ or DNE; Diverges}\] \vspace{1em}\\
 
 \subsection{Tests for Convergence and Divergence of Series}
-\textbf{Geometric Series Test:} Given the geometric series $S = a+ar+ar^2+ar+3+...$, the geometric series converges to $\frac{a}{1-r}$ if $|r|<1$, otherwise it diverges. \[\text{If } |r|<1\rightarrow\sum_{n=1}^{\infty}a(r)^{n-1} = \frac{a}{1-r}\] \vspace{1em}\\
-\textbf{nth Term Test:} If the sequence $\{a_n\}$ does not converge to 0, then the series $\sum_{n=1}^{\infty}a_n$ diverges. Be careful in using this test as this test can NOT prove convergence of a series. \[\lim_{n\rightarrow\infty}a_n\neq0 \rightarrow \sum_{n=1}^{\infty}a_n=\infty \text{ or DNE}\] \vspace{1em}\\
-\textbf{p-series Test:} Since we know from sequences that $\{n^p\}$ diverges for all $p>0$ and that $\{\frac{1}{n^p}\}$ converges for all $p\geq0$, the series of $\frac{1}{n^p}$ will converge if and only if $p>1$. \footnote{Note that $\sum_{n=1}^{\infty}\frac{1}{p^n}$ is just a geometric series and thus can be found through the Geometric Series Test.}\[p\leq1\rightarrow\sum_{n=1}^{\infty}\frac{1}{n^p}=\infty\] \vspace{1em}\\
+\textbf{Geometric Series Test:} Given the geometric series $S = a+ar+ar^2+ar+3+...$, the geometric series converges to $\frac{a}{1-r}$ if $|r|<1$, otherwise it diverges. \[\text{If } |r|<1\implies\sum_{n=1}^{\infty}a(r)^{n-1} = \frac{a}{1-r}\] \vspace{1em}\\
+\textbf{nth Term Test:} If the sequence $\{a_n\}$ does not converge to 0, then the series $\sum_{n=1}^{\infty}a_n$ diverges. Be careful in using this test as this test can NOT prove convergence of a series. \[\lim_{n\rightarrow\infty}a_n\neq0 \implies \sum_{n=1}^{\infty}a_n=\infty \text{ or DNE}\] \vspace{1em}\\
+\textbf{P-series Test:} Since we know from sequences that $\{n^p\}$ diverges for all $p>0$ and that $\{\frac{1}{n^p}\}$ converges for all $p\geq0$, the series of $\frac{1}{n^p}$ will converge if and only if $p>1$. \footnote{Note that $\sum_{n=1}^{\infty}\frac{1}{p^n}$ is just a geometric series and thus can be found through the Geometric Series Test.}\[p\leq1\implies\sum_{n=1}^{\infty}\frac{1}{n^p}=\infty\] \vspace{1em}\\
 \textbf{Comparison Test\footnote{Not to be confused with the sequence test, comparison principle.}:} If $\{a_n\}$ and $\{b_n\}$ are two sequences such that $0<a_n\leq b_n$ for all natural numbers $n$, then:
 \begin{enumerate}
     \item If $\sum_{n=1}^{\infty} a_n$ diverges, then $\sum_{n=1}^{\infty} b_n$ also diverges.
@@ -307,13 +307,48 @@ Take note that you cannot prove that $\sum_{n=1}^{\infty} a_n$ diverges or that 
 
 \subsection{Limits and Discontinuities}
 \textbf{Limits:} A limit exists at $x\rightarrow c$ if and only if \[\lim_{x\rightarrow c^+}f(x)=\lim_{x\rightarrow c^-}f(x)\] and the limit is a finite, non-infinite number. \vspace{1em}\\
-\textbf{Continuity:} A function is continuous at point $x=c$ if and only if \[\lim_{x\rightarrow c^+}f(x)=\lim_{x\rightarrow c^-}f(x)=f(c)\]  \vspace{1em}\\
+\textbf{Continuity:} A function is continuous at point $x=c$ if and only if \[\lim_{x\rightarrow c^+}f(x)=\lim_{x\rightarrow c^-}f(x)=f(c)\]
+\begin{enumerate}
+    \item $\lim_{x\rightarrow c}f(x)$ exists
+    \item $f(c)$ exists
+    \item $\lim_{x\rightarrow c}f(x)=f(c)$
+\end{enumerate}
 \textbf{Discontinuities:}
 \begin{enumerate}
     \item Removable discontinuity (hole): The limit exists but is not continuous.
     \item Jump discontinuity: $\lim_{x\rightarrow c^+}f(x)$ and $\lim_{x\rightarrow c^-}f(x)$ exist but $\lim_{x\rightarrow c}f(x)$ does not exist.
     \item Infinite discontinuity (vertical asymptote): both one-sided limits approach infinity, and thus do not exist (DNE). Limit algebraically is $\frac{k}{0}$.
 \end{enumerate}
-\textbf{Definition of a Limit:} A function $f(x)$ is said to approach a limit $L$ as $x\rightarrow c$ if and only if for any positive $\epsilon$ there exists a positive number $\delta$ such that whenever $x$ is within $\delta$ of $c$, but $x\neq c$, $f(x)$ is within $\epsilon$ of $L$. \[\lim_{x\rightarrow c}f(x)=L\]
-To find if a limit exists at c, 
+\textbf{Definition of a Limit:} A function $f(x)$ is said to approach a limit $L$ as $x\rightarrow c$ if and only if for any positive $\epsilon$ there exists a positive number $\delta$ such that whenever $x$ is within $\delta$ of $c$, but $x\neq c$, $f(x)$ is within $\epsilon$ of $L$. \[\lim_{x\rightarrow c}f(x)=L \text{ iff } \forall\epsilon>0, \exists\delta>0: 0<|x-c|<\delta\implies|f(x)-L|<\epsilon\]
+\textbf{Delta-Epsilon Proof:} Start with epsilon proof: \[L-\epsilon<f(x)<L+\epsilon\] and express $x$ in terms of $\epsilon$. Find $\delta_L$ and $\delta_R$ and set $\delta$ to be the smaller of the two. Finally, write a conclusion statement and plug in values as necessary: \[\text{Let } \epsilon>0, \text{for any }x\text{ within }\delta=\_ \text{ of } c, f(x)\text{ is within } \epsilon \text{ of }L\]
+\textbf{Limit Properties:} 
+\begin{enumerate}
+    \item The limit of a produce equals the product of the limits. \[\lim_{x\rightarrow c}(f(x)\times g(x))=\lim_{x\rightarrow c}(f)\times\lim_{x\rightarrow c}g(x)\]
+    \item The limit of a sum equals the sum of the limits. \[\lim_{x\rightarrow c}(f(x)+ g(x))=\lim_{x\rightarrow c}(f)+\lim_{x\rightarrow c}g(x)\]
+    \item The limit of a quotient equals the quotient of the limits. \[\lim_{x\rightarrow c}\frac{f(x)}{g(x)}=\frac{\lim_{x\rightarrow c}(f)}{\lim_{x\rightarrow c}g(x)}\]
+    \item The limit of a constant times a function equals the constant time the limit. \[\lim_{x\rightarrow c}Cf(x)=C\lim_{x\rightarrow c}(f)\]
+    \item The limit of the constant is that constant. \[\lim_{x\rightarrow c}C=C\]
+    \item The limit of the identity function is "c". \[\lim_{x\rightarrow c}x=c\]
+    \item The limit of a composite is the limit of the inside function with respect to the outside function. \[\lim_{x\rightarrow c}f(g(x))=f(\lim_{x\rightarrow c}g(x))\]
+\end{enumerate}
+\textbf{Intermediate Value Theorem (IVT):} Given that $f(x)$ is continuous for all $x$ in the interval $[a,b]$, if $y$ is a value between $f(a)$ and $f(b)$, then there is a number $x=c$ in $[a,b]$ for which $f(c)=y$.
+
+\subsection{Derivatives}
+\textbf{Formal Definition of the Derivative at a Point (FDoDaP):} \[f'(c)=\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}\]
+\textbf{Formal Definition of the Derivative (FDoD):} \[f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}\]
+\textbf{Power Rule:} \[f(x)=x^n \implies f'(x)=nx^{n-1}\]
+\textbf{Chain Rule:} \[h(x)=f(g(x)) \implies h'(x)=f'(g(x))g'(x)\] \[\frac{dy}{dx}=\frac{dy}{du}\times\frac{du}{dx}\]
+\textbf{Trigonometric Functions:} \[f(x)=\sin(x) \implies f'(x)=\cos(x)\] \[f(x)=\cos(x) \implies f'(x)=-\sin(x)\] \[f(x)=\tan(x) \implies f'(x)=\sec^2(x)\] \[f(x)=\cot(x) \implies f'(x)=-\csc^2(x)\] \[f(x)=\sec(x) \implies f'(x)=\sec(x)\tan(x)\] \[f(x)=\csc(x) \implies f'(x)=- \csc(x)\cot(x)\]
+
+\subsection{Particle Motion}
+\textbf{Relation of Derivatives:} Given that $p(t)$ is the position of the particle, $p'(t)=v'(t)$ is the velocity and $s''(t)=v'(t)=a(t)$ is acceleration. Note that the speed of a particle is $|v(t)|$ and the particle is speeding up if $v(t)$ and $a(t)$ have the same sign. 
+
+\subsection{Sinusoids}
+\textbf{Sinusoids:} Amplitude is $A$, Period is $\frac{2\pi}{B}$, Phase shift is $C$ (positive to left)\footnote{also remember that $\sin(0)=0$ and $\cos(0)=1$}, and vertical shift is $D$ (midline is $y=D$) \[y=A\sin(B(x+C))+D\]
+
+\subsection{Antiderivatives}
+\textbf{Indefinite Integral:} $g(x)$ is the antiderivative of f(x) if and only if $g'(x)=f(x)$. \[\int f(x)dx = g(x)+c\footnote{Make sure to not forget the +c}\]
+
+\subsection{Fundamental Theorem of Calculus}
+\[\int_{a}^{b}f'(t)dt=f(b)-f(a)\]
 \end{document}
